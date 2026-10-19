@@ -12,7 +12,6 @@ from kitchen import Converter, Quantity, Sum, grams, ounces
 # [x] 200 g + 1 oz, reduced to grams, uses the conversion rate.
 # [x] Reducing ounces to grams multiplies by the conversion rate.
 # [x] (200 g + 1 oz) × 2.
-# [ ] Hashability, if a future use case requires it.
 
 
 def test_multiplication():
