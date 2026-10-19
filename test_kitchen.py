@@ -1,4 +1,4 @@
-from kitchen import Converter, Quantity, grams, ounces
+from kitchen import Converter, Quantity, Sum, grams, ounces
 
 
 def test_multiplication():
@@ -20,3 +20,11 @@ def test_simple_addition():
     total = grams(200).plus(grams(300))
     converter = Converter()
     assert converter.reduce(total, "g") == grams(500)
+
+
+def test_addition_retains_both_operands():
+    total = grams(200).plus(grams(300))
+
+    assert isinstance(total, Sum)
+    assert total.left == grams(200)
+    assert total.right == grams(300)
