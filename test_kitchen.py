@@ -1,6 +1,20 @@
 from kitchen import Converter, Quantity, Sum, grams, ounces
 
 
+# Test list
+# [x] 200 g × 3 = 600 g.
+# [x] Multiplication does not modify the original quantity.
+# [x] Equal amounts in the same unit are equal.
+# [x] 1 oz is not the same as 1 g.
+# [x] 200 g + 300 g = 500 g.
+# [x] Addition retains both operands until reduction.
+# [x] Reduce a same-unit quantity without a conversion rate.
+# [x] 200 g + 1 oz, reduced to grams, uses the conversion rate.
+# [x] Reducing ounces to grams multiplies by the conversion rate.
+# [x] (200 g + 1 oz) × 2.
+# [ ] Hashability, if a future use case requires it.
+
+
 def test_multiplication():
     flour = grams(200)
     assert flour.times(3) == grams(600)
